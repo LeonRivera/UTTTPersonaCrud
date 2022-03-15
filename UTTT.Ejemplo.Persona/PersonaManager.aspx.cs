@@ -124,6 +124,7 @@ namespace UTTT.Ejemplo.Persona
             var textoMaterno = this.txtAMaterno.Text.Trim();
             var textoPaterno = this.txtAPaterno.Text.Trim();
             var textoCurp = this.txtCurp.Text.Trim();
+            var textoFecha = this.txtFechaNacimiento.Text.Trim();
             var sexo = -1;
 
             int i = 0;
@@ -232,8 +233,8 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-                PersonaManager.sendEmailException(_e.ToString());
-                this.showMessageException(_e.Message);
+                this.Label1.Text = "Proporciona una fecha correcta";
+                this.Label1.Visible = true;
             }
         }
 
@@ -367,6 +368,11 @@ namespace UTTT.Ejemplo.Persona
                 _mensaje = "El apellido materno sale del rango establecido de caracteres";
                 return false;
             }
+            if (_persona.dteFechaNacimiento.Equals(String.Empty))
+            {
+                _mensaje = "Proporciona una fecha valida";
+                return false;
+            }
 
             
 
@@ -375,20 +381,20 @@ namespace UTTT.Ejemplo.Persona
 
         public static void sendEmailException(string message)
         {
-            MailMessage mailMessage = new MailMessage();
-            SmtpClient smtpClient = new SmtpClient();
-            mailMessage.From = new MailAddress("19300694@uttt.edu.mx");
-            mailMessage.To.Add(new MailAddress("edel.meza@uttt.edu.mx"));
-            mailMessage.Subject = "StackTraceException de la aplicacion";
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Body = "El siguiente stack de excepciones se produjo por un error interno en la aplicaciones= <br>"+ message;
-            smtpClient.Port = 587;
-            smtpClient.Host = "smtp.gmail.com";
-            smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("19300694@uttt.edu.mx", "LRR9334L");
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.Send(mailMessage);
+            //MailMessage mailMessage = new MailMessage();
+            //SmtpClient smtpClient = new SmtpClient();
+            //mailMessage.From = new MailAddress("19300694@uttt.edu.mx");
+            //mailMessage.To.Add(new MailAddress("edel.meza@uttt.edu.mx"));
+            //mailMessage.Subject = "StackTraceException de la aplicacion";
+            //mailMessage.IsBodyHtml = true;
+            //mailMessage.Body = "El siguiente stack de excepciones se produjo por un error interno en la aplicaciones= <br>"+ message;
+            //smtpClient.Port = 587;
+            //smtpClient.Host = "smtp.gmail.com";
+            //smtpClient.EnableSsl = true;
+            //smtpClient.UseDefaultCredentials = false;
+            //smtpClient.Credentials = new NetworkCredential("19300694@uttt.edu.mx", "LRR9334L");
+            //smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //smtpClient.Send(mailMessage);
         }
        
         #endregion
