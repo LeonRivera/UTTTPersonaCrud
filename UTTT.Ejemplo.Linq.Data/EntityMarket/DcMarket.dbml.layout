@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DcMarket">
+  <DataContextMoniker Name="/DcMarketDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7a1a9372-9d16-4178-a8cf-1278bb393429" absoluteBounds="3.5, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DcMarketDataContext/cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fa62177-83bc-42ff-8090-6e549a612d2a" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="594428a2-d8df-4799-bb34-622ea832a0a3" absoluteBounds="6.25, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DcMarketDataContext/producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3401a2a-b38f-4327-ad92-730bdc204974" absoluteBounds="6.265, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ea85398-dd87-43b7-86e7-6020979c2f08" absoluteBounds="0.75, 1.75, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/DcMarketDataContext/usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d89f00c8-4652-4e48-80fe-a9cdad928b8b" absoluteBounds="0.765, 2.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6571d7bd-bcc6-47ec-9054-b5ecfddcd5f6" absoluteBounds="3.5, 3.125, 2, 1.193992513020834">
+      <DataClassMoniker Name="/DcMarketDataContext/vendedor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0b2ff33-5699-4b42-b28b-1335b91f8a80" absoluteBounds="3.515, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcMarketDataContext/usuario/usuario_cliente" />
+      <nodes>
+        <classShapeMoniker Id="8ea85398-dd87-43b7-86e7-6020979c2f08" />
+        <classShapeMoniker Id="7a1a9372-9d16-4178-a8cf-1278bb393429" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.72199625651042); (6.25 : 3.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcMarketDataContext/vendedor/vendedor_producto" />
+      <nodes>
+        <classShapeMoniker Id="6571d7bd-bcc6-47ec-9054-b5ecfddcd5f6" />
+        <classShapeMoniker Id="594428a2-d8df-4799-bb34-622ea832a0a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.41909912109375); (3.5 : 3.41909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcMarketDataContext/usuario/usuario_vendedor" />
+      <nodes>
+        <classShapeMoniker Id="8ea85398-dd87-43b7-86e7-6020979c2f08" />
+        <classShapeMoniker Id="6571d7bd-bcc6-47ec-9054-b5ecfddcd5f6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

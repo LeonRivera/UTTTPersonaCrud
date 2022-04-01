@@ -112,7 +112,7 @@
                         <p class="m-0 form-label">Sexo:</p>
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:DropDownList CssClass="m-0 form-control bg-primary text-white" ID="ddlSexo" runat="server"
+                                <asp:DropDownList CssClass="m-0 form-control bg-primary text-white" ID="ddlSexo" runat="server" OnSelectedIndexChanged="ddlSexo_SelectedIndexChanged1"
                                     >
                                 </asp:DropDownList>
                                 <triggers>

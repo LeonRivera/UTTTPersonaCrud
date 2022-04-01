@@ -185,7 +185,7 @@ namespace UTTT.Ejemplo.Persona
                    
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
 
-                    persona.dteFechaNacimiento = fechaNacimiento;
+                    
 
 
                     persona.strCURP = this.txtCurp.Text.Trim();
@@ -217,6 +217,7 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
                     persona.strCURP = this.txtCurp.Text.Trim();
+                    persona.dteFechaNacimiento = fechaNacimiento;
 
                     String mensaje = String.Empty;
                     if (!this.validacion(persona, ref mensaje))

@@ -158,6 +158,7 @@ namespace UTTT.Ejemplo.Persona
                 parametrosRagion.Add("idPersona", _idPersona.ToString());
                 this.session.Parametros = parametrosRagion;
                 this.Session["SessionManager"] = this.session;
+                
                 this.session.Pantalla = String.Empty;
                 this.session.Pantalla = "~/PersonaManager.aspx";
                 this.Response.Redirect(this.session.Pantalla, false);

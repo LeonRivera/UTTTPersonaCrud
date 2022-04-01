@@ -80,21 +80,6 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="container">
             <div class="card">
                 <h4 class="text-center card-header">Detalle

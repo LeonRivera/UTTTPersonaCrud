@@ -44,5 +44,16 @@ namespace UTTT.Ejemplo.Linq.Data.Properties {
                 return ((string)(this["PersonaUTTTConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J7JC9PJ;Initial Catalog=marketplace_bd;User ID=sa;Password=sa" +
+            "")]
+        public string marketplace_bdConnectionString {
+            get {
+                return ((string)(this["marketplace_bdConnectionString"]));
+            }
+        }
     }
 }

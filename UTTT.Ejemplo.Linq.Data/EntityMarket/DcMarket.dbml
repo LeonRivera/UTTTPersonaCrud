@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="marketplace_bd" Class="DcMarketDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-J7JC9PJ;Initial Catalog=marketplace_bd;User ID=sa" SettingsObjectName="UTTT.Ejemplo.Linq.Data.Properties.Settings" SettingsPropertyName="marketplace_bdConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.cliente" Member="cliente">
+    <Type Name="cliente">
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_cliente" Member="usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producto" Member="producto">
+    <Type Name="producto">
+      <Column Name="id_producto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="vendedor_producto" Member="vendedor" ThisKey="id_vendedor" OtherKey="id_vendedor" Type="vendedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario" Member="usuario">
+    <Type Name="usuario">
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="perfil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="usuario_cliente" Member="cliente" ThisKey="id_usuario" OtherKey="id_usuario" Type="cliente" />
+      <Association Name="usuario_vendedor" Member="vendedor" ThisKey="id_usuario" OtherKey="id_usuario" Type="vendedor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vendedor" Member="vendedor">
+    <Type Name="vendedor">
+      <Column Name="id_vendedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="vendedor_producto" Member="producto" ThisKey="id_vendedor" OtherKey="id_vendedor" Type="producto" />
+      <Association Name="usuario_vendedor" Member="usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

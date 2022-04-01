@@ -49,7 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EntityMarket\DcMarket.cs">
+      <DependentUpon>DcMarket.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityMarket\DcMarket.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DcMarket.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityMarket\usuario.cs" />
     <Compile Include="Entity\CatSexo.cs" />
+    <Compile Include="Entity\DcGeneral.cs">
+      <DependentUpon>DcGeneral.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Entity\DcGeneral.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="EntityMarket\DcMarket.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DcMarket.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EntityMarket\DcMarket.dbml.layout">
+      <DependentUpon>DcMarket.dbml</DependentUpon>
+    </None>
     <None Include="Entity\DcGeneral.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DcGeneral.designer.cs</LastGenOutput>
